@@ -8,7 +8,7 @@ const options: swaggerJsdoc.Options = {
       version: '1.0.0',
     },
   },
-  apis: ['./routes/*.ts'], // あなたのルートが定義されている場所を指定します
+  apis: ['./routes/*.ts'],
 };
 
 const specs = swaggerJsdoc(options);
