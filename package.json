@@ -35,8 +35,13 @@
     "typescript": "^5.2.2"
   },
   "nodemonConfig": {
-    "watch": ["src"],
+    "watch": [
+      "src"
+    ],
     "ext": "ts,js",
     "exec": "npx tsc && node dist/server.js"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.2.0"
   }
 }
