@@ -1,0 +1,11 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "ignorePatterns": ["build", "__tests__"],
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "extends": "eslint:recommended"
+}
