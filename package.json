@@ -6,9 +6,9 @@
   "scripts": {
     "test": "jest",
     "build": "webpack --mode production",
-    "dev:server": "wait-on dist/server.js && nodemon",
-    "dev:webpack": "webpack --mode development --watch",
-    "dev": "run-p dev:webpack dev:server"
+    "dev:server": "wait-on build/server.js && nodemon",
+    "dev:build": "webpack --mode development --watch",
+    "dev": "run-p dev:build dev:server"
   },
   "repository": {
     "type": "git",
@@ -44,10 +44,10 @@
   },
   "nodemonConfig": {
     "watch": [
-      "dist"
+      "build"
     ],
     "ext": "ts,js",
-    "exec": "node dist/server.js"
+    "exec": "node build/server.js"
   },
   "dependencies": {
     "@prisma/client": "^5.2.0"
