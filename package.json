@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "lint": "eslint --ext .ts",
+    "lint": "eslint src --ext .ts",
     "build": "webpack --mode production",
     "dev:server": "wait-on build/server.js && nodemon",
     "dev:build": "webpack --mode development --watch",
