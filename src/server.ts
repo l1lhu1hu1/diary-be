@@ -1,8 +1,10 @@
 import express from 'express';
 import swaggerUi from 'swagger-ui-express';
 import swaggerDocument from './swaggerOptions';
-import { diaries } from './routes/diaries';
-import { diary } from './routes/diary';
+import { diaries } from './routes/diary/diaries';
+import { diary } from './routes/diary/diary';
+import { newUser } from './routes/user/new';
+import { user } from './routes/user/user';
 
 const app = express();
 
@@ -24,4 +26,12 @@ app.get('/diaries', (req, res) => {
 
 app.get('/diary/:diaryId', (req, res) => {
   diary(req, res);
+});
+
+app.get('/user/new', (req, res) => {
+  newUser(req, res);
+});
+
+app.get('/user/:userId', (req, res) => {
+  user(req, res);
 });
