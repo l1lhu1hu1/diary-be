@@ -3,11 +3,14 @@ import { PrismaClient } from '@prisma/client'
 
 export const user = async(req: Request, res: Response) => {
   const prismaClient = new PrismaClient();
+  const userId = Number(req.params.userId)
   const user = await prismaClient.user.findUnique({
-      where: {
-        name: 'Alice',
-        email: 'alice@hello.com'
-      }
+    where: {
+      id: userId
+    },
+    include: {
+      diaries: true
+    }
   })
   console.log('user', user)
   res.send(`user id: ${user?.id}`);
