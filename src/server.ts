@@ -12,7 +12,12 @@ import { user } from './routes/user/user';
 
 const app = express();
 
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use(
+  '/api-docs',
+  express.static('node_modules/swagger-ui-dist/', {index: false}),
+  swaggerUi.serve,
+  swaggerUi.setup(swaggerDocument)
+);
 
 app.listen(8080, () => {
   // eslint-disable-next-line
